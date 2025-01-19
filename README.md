@@ -1,1 +1,1 @@
-"# Getting started with a Flask project" 
+# Getting started with a Flask project
