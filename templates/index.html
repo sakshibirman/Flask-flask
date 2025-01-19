@@ -1,16 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
-    <title>My App</title>
-</head>
-<body>
-    <h1>Welcome to my App</h1>
-    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Incidunt tempora doloremque quas accusantium in quidem voluptas 
-        fuga dignissimos nam deleniti, velit laudantium labore ratione, 
-        iure odit non natus alias error.</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block head %}
+<title>Tasks</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <h1>Tasks</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Date</td>
+            <td>More</td>
+        </tr>
+    </table>
+    <form acition="">
+        <input type="text" name="content" id="content"/>
+        <input type="text" name="content" id="content"/>
+    </form>
+</div>
+{% endblock %}
