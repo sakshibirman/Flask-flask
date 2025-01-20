@@ -43,13 +43,9 @@ def index():
             return f"ERROR:{e}"    
     #See Current Task
     else:
-        try:
-            task = MyTask.query.order_by(MyTask.created).all()
+        task = MyTask.query.order_by(MyTask.created).all()
 
-            return render_template("index.html", task=task)
-        except Exception as e:
-            app.logger.error(f"Error retrieving tasks: {e}")
-            return f"Internal Server Error: {e}", 500     
+        return render_template("index.html", task=task)
 
 
 #Delete an item
