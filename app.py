@@ -10,6 +10,7 @@ app=Flask(__name__)
 Scss(app)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
 db= SQLAlchemy(app)
 
 ist = pytz.timezone('Asia/Kolkata')
@@ -22,6 +23,9 @@ class MyTask(db.Model):
 
     def __repr__(self) -> str:
         return f"Task {self.id}"
+
+with app.app_context():
+    db.create_all()
 
 #home page
 @app.route("/", methods=["POST","GET"])
@@ -39,9 +43,13 @@ def index():
             return f"ERROR:{e}"    
     #See Current Task
     else:
-        task = MyTask.query.order_by(MyTask.created).all()
+        try:
+            task = MyTask.query.order_by(MyTask.created).all()
 
-        return render_template("index.html", task=task)
+            return render_template("index.html", task=task)
+        except Exception as e:
+            app.logger.error(f"Error retrieving tasks: {e}")
+            return f"Internal Server Error: {e}", 500     
 
 
 #Delete an item
@@ -71,8 +79,5 @@ def edit(id: int):
 
 
 
-if __name__ in "__main__":
-    with app.app_context():
-        db.create_all()
-
+if __name__ == "__main__":
     app.run(debug=True)
