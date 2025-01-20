@@ -1,3 +1,77 @@
+//color variables
+
+$primary_color: rgba(6, 6, 80, 0.733);
+$primary-hover-color: #406dde;
+$success-color: #348dad;
+$title-color: #3d15b5;
+$bg-color: rgb(236, 222, 197);
+
 body{
-    background-color: wheat;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $bg-color;
+}
+
+.content{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(80, 71, 71, 0.147);
+    text-align: center;
+
+    h1{
+        color: $title-color;  
+    }
+
+    h3{
+        color: #95c185;
+    }
+
+    table{
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+
+        th, td{
+            padding: 10px;
+            border: 1px solid #100335;
+
+            th{
+                background-color: antiquewhite;
+            }
+        }
+    }
+
+    a{
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: $primary_color;
+        color: whitesmoke;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+            &:hover{
+                background-color: $primary-hover-color;
+            }
+    }
+
+    input{
+        padding: 10px;
+        margin: 5px;
+        border: solid 1px;
+        border-radius: 5px;
+    }
+
+    #btn_add{
+        background-color: $success-color;
+        color: rgb(35, 3, 3);
+        cursor: pointer;
+        &:hover{
+            background-color: $primary-hover-color;
+        }
+    }
 }

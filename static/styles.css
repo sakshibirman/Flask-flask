@@ -1,3 +1,61 @@
 body {
-  background-color: wheat;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(236, 222, 197);
+}
+
+.content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(80, 71, 71, 0.147);
+  text-align: center;
+}
+.content h1 {
+  color: #3d15b5;
+}
+.content h3 {
+  color: #95c185;
+}
+.content table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.content table th, .content table td {
+  padding: 10px;
+  border: 1px solid #100335;
+}
+.content table th th, .content table td th {
+  background-color: antiquewhite;
+}
+.content a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: rgba(6, 6, 80, 0.733);
+  color: whitesmoke;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.content a:hover {
+  background-color: #406dde;
+}
+.content input {
+  padding: 10px;
+  margin: 5px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.content #btn_add {
+  background-color: #348dad;
+  color: rgb(35, 3, 3);
+  cursor: pointer;
+}
+.content #btn_add:hover {
+  background-color: #406dde;
 }/*# sourceMappingURL=styles.css.map */
